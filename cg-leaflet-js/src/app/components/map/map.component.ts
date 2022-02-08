@@ -24,7 +24,7 @@ export class MapComponent implements OnInit, AfterViewInit {
 		this.map = this.mapService.createMap(53.2194, 6.5665, 10);
 		this.baseLayer = this.mapService.createBaseLayer(MapOptions.STAMEN, 1, 16);
 		this.mapService.addBaseLayer(this.baseLayer, this.map);
-		this.onMapReady(this.map)
+		this.onMapReady(this.map);
 	}
 
 	onMapOptionClicked(url: string) {
@@ -34,8 +34,7 @@ export class MapComponent implements OnInit, AfterViewInit {
 
 	onMapReady(map: Leaflet.Map) {
 		Leaflet.heatLayer([
-			[50.5, 30.5, 1],
-			[50.6, 30.4, 1]
-		], {radius: 2500}).addTo(map);
+			[53.2194, 6.5665, 15],
+		], {radius: 10}).addTo(map);
 	}
 }

@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Heatmap} from "../models/heatmap";
 import * as Leaflet from "leaflet";
 import {Subject} from "rxjs";
 
@@ -20,11 +19,17 @@ export class MapService {
 		return Leaflet.tileLayer(url, {minZoom: minZoom, maxZoom: maxZoom});
 	}
 
+	// createHeatLayer()
+
 	addBaseLayer(layer: Leaflet.Layer, map: Leaflet.Map) {
 		layer.addTo(map);
 	}
 
 	removeBaseLayer(layer: Leaflet.Layer, map: Leaflet.Map) {
 		layer.removeFrom(map);
+	}
+
+	addHeatLayer(layer: Leaflet.HeatLayer, map: Leaflet.Map) {
+		layer.addTo(map);
 	}
 }

@@ -1,0 +1,7 @@
+<div class="options_panel">
+	<ul>
+		<li *ngFor="let option of options" (click)="emitOption(option[1].toString())">
+			{{option[0]}}
+		</li>
+	</ul>
+</div>
